@@ -1,0 +1,11 @@
+mixin articleCard(article)
+  a.card(href=`/article/${article.id}`)
+    image.card-image(src=article.image_url)
+    div.card-body
+      div.card-title=article.title
+      p.published-on Published
+        strong.emphasize #{article.friendlyPublishedDate}
+        | by
+        strong.emphasize #{article.author.first_name}
+      div.card-hook=article.hook_text
+
